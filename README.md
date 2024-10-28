@@ -67,9 +67,9 @@ Create a config file `config.json` with content as shown below:
 
 ## Perform a simple chat:
 ```py
-from src.gen_ai_wrapper import GenAIWrapper, ChatObject
+from genai_wrapper.wrapper  import GenAIWrapper, ChatObject
 
-# Make sure to pass the path of your config file is the config.json is not in the same directory.
+# Make sure to pass the path of your config file if the config.json is not in the same directory.
 gen_ai = GenAIWrapper(
     config_file="config.json"
 )
@@ -84,9 +84,9 @@ print(chat.get_answer())
 
 ## Perform a simple embedding call:
 ```py
-from src.gen_ai_wrapper import GenAIWrapper
+from genai_wrapper.wrapper  import GenAIWrapper
 
-# Make sure to pass the path of your config file is the config.json is not in the same directory.
+# Make sure to pass the path of your config file if the config.json is not in the same directory.
 gen_ai = GenAIWrapper(
     config_file="config.json"
 )
@@ -98,9 +98,9 @@ print( embed )
 
 ## Perform similarity search in HANA Db:
 ```py
-from src.gen_ai_wrapper import GenAIWrapper
+from genai_wrapper.wrapper  import GenAIWrapper
 
-# Make sure to pass the path of your config file is the config.json is not in the same directory.
+# Make sure to pass the path of your config file if the config.json is not in the same directory.
 gen_ai = GenAIWrapper(
     config_file="config.json"
 )
@@ -121,6 +121,6 @@ gen_ai.close()
 ### [Check out the examples folder for more code.](https://github.com/praveen-nair/genai_wrapper/tree/master/examples)
 
 # Found an issue/ Have a suggestion?
-**IMP**: This package is for educational use and isn’t meant to replace other libraries.
+**IMP**: This package is for educational use and is not meant to replace other libraries.
 
-If something isn’t working as expected or you have ideas for improvements, please feel free to open an issue or submit a pull request.
+If something is not working as expected or you have ideas for improvements, please feel free to open an issue or submit a pull request.

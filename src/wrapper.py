@@ -5,7 +5,7 @@ from genai_wrapper import *
 
 class GenAIWrapper:
     __author__ = "https://github.com/praveen-nair"
-    __version__ = "00.00.03.202411"
+    __version__ = "00.00.04.202411"
 
     def __init__( self, **kwargs: dict ) -> None:
         global central_config
