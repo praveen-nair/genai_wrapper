@@ -51,11 +51,7 @@ class GenAIWrapper:
         cursor = genai_wrapper.hana_db_client.cursor()
 
         cursor.execute( 
-            f"SELECT TOP {hana_vector_object.k} {hana_vector_object.columns}, "
-            f"COSINE_SIMILARITY({hana_vector_object.vector_col}, TO_REAL_VECTOR('{vec_query}')) AS SIM_SCORE "
-            f"FROM {hana_vector_object.table} "
-            f"{'WHERE ' + hana_vector_object.conditions if hana_vector_object.conditions else ''} "
-            f"ORDER BY SIM_SCORE DESC;" 
+            f"SELECT TOP {hana_vector_object.k} {hana_vector_object.columns}, " f"COSINE_SIMILARITY({hana_vector_object.vector_col}, TO_REAL_VECTOR('{vec_query}')) AS SIM_SCORE " f"FROM {hana_vector_object.table} " f"{'WHERE ' + hana_vector_object.conditions if hana_vector_object.conditions else ''} " f"ORDER BY SIM_SCORE DESC;" 
         )
 
         result = hana_vector_object._process_output_( cursor.fetchall() )
