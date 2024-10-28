@@ -5,7 +5,7 @@ from genai_wrapper import *
 
 class GenAIWrapper:
     __author__ = "https://github.com/praveen-nair"
-    __version__ = "00.00.04.202411"
+    __version__ = "00.00.06.202411"
 
     def __init__( self, **kwargs: dict ) -> None:
         global central_config
@@ -50,7 +50,13 @@ class GenAIWrapper:
 
         cursor = genai_wrapper.hana_db_client.cursor()
 
-        cursor.execute( f"SELECT TOP {hana_vector_object.k} {hana_vector_object.columns}, COSINE_SIMILARITY({hana_vector_object.vector_col}, TO_REAL_VECTOR('{vec_query}')) AS SIM_SCORE FROM {hana_vector_object.table} {f"WHERE {hana_vector_object.conditions}" if hana_vector_object.conditions else ""} ORDER BY SIM_SCORE DESC;" )
+        cursor.execute( 
+            f"SELECT TOP {hana_vector_object.k} {hana_vector_object.columns}, "
+            f"COSINE_SIMILARITY({hana_vector_object.vector_col}, TO_REAL_VECTOR('{vec_query}')) AS SIM_SCORE "
+            f"FROM {hana_vector_object.table} "
+            f"{'WHERE ' + hana_vector_object.conditions if hana_vector_object.conditions else ''} "
+            f"ORDER BY SIM_SCORE DESC;" 
+        )
 
         result = hana_vector_object._process_output_( cursor.fetchall() )
 
