@@ -1,0 +1,48 @@
+{
+    "ai_core": {
+        "secret": {
+            "clientid": "<Enter value from the generated secret key>",
+            "clientsecret": "<Enter value from the generated secret key>",
+            "url": "<Enter value from the generated secret key>",
+            "identityzone": "",
+            "identityzoneid": "",
+            "appname": "",
+            "serviceurls": {
+                "AI_API_URL": "<Enter value from the generated secret key>"
+            }
+        },
+        "resource_group": "<Enter your ai-core resource group where you have deployed the models>"
+    },
+    "gen_ai": {
+        "<Give a name to identify the model>": {
+            "deploymentid": "<Enter the deployment Id>",
+            "model_name": "<Enter the model name as per SAP's llm model name definition>",
+            "parameters": {
+                "max_tokens": 100,
+                "temperature": 0.1,
+                "frequency_penalty": 0.0,
+                "presence_penalty": 0.0
+            }
+        },
+        "model_gpt-4o": {
+            "deploymentid": "d123456789012345",
+            "model_name": "gpt-4o",
+            "parameters": {
+                "max_tokens": 500,
+                "temperature": 1.0,
+                "frequency_penalty": 0.0,
+                "presence_penalty": 0.0
+            }
+        },
+        "text-embedding": {
+            "deploymentid": "d123456789054321"
+        }
+    },
+    "hana_vec_store": {
+        "host": "<Enter your HANA machine host>",
+        "port": 443,
+        "userid": "<Enter your user id>",
+        "password": "<Enter your password>",
+        "ssl_cert_validation": false
+    }
+}
