@@ -14,7 +14,7 @@
         "resource_group": "<Enter your ai-core resource group where you have deployed the models>"
     },
     "gen_ai": {
-        "<Give a name to identify the model>": {
+        "<Give a name to identify the model - See below name: model_gpt-4o as an example>": {
             "deploymentid": "<Enter the deployment Id>",
             "model_name": "<Enter the model name as per SAP's llm model name definition>",
             "parameters": {

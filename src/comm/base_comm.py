@@ -6,7 +6,7 @@ from genai_wrapper import Config, GenAIWrapperException
 
 class BaseComm:
     def __init__( self, **kwargs: dict ) -> None:
-        self.bu = genai_wrapper.central_config["ai_core"]["secret"]["url"]
+        self.bu = genai_wrapper.central_config["ai_core"]["secret"]["serviceurls"]["AI_API_URL"]
         self.cu = kwargs["cu"]
         self.dp = kwargs["dp"]
         self.bt = genai_wrapper.ai_core_client.rest_client.get_token()

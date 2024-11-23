@@ -98,7 +98,7 @@ print( embed )
 
 ## Perform similarity search in HANA Db:
 ```py
-from genai_wrapper.wrapper  import GenAIWrapper
+from genai_wrapper.wrapper  import GenAIWrapper, HANAVectorObject
 
 # Make sure to pass the path of your config file if the config.json is not in the same directory.
 gen_ai = GenAIWrapper(
